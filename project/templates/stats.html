@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Byte-Sized — Stats</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Byte-Sized</h1>
+    <nav>
+        <a href="/">Back to all cards</a>
+    </nav>
+
+    <h2>Your Stats</h2>
+
+    {% if cards %}
+    <table>
+        <tr>
+            <th>Question</th>
+            <th>Correct</th>
+            <th>Incorrect</th>
+        </tr>
+        {% for card in cards %}
+        <tr>
+            <td>{{ card["question"] }}</td>
+            <td>{{ card["correct_count"] }}</td>
+            <td>{{ card["incorrect_count"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>No cards yet, add some to start tracking stats.</p>
+    {% endif %}
+</body>
+</html>

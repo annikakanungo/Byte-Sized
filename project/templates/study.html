@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Byte-Sized — Study</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Byte-Sized</h1>
+    <nav>
+        <a href="/">Back to all cards</a>
+    </nav>
+
+    <h2>{{ card["question"] }}</h2>
+
+    <button onclick="document.getElementById('answer-text').style.display='block'">
+        Show Answer
+    </button>
+
+    <p id="answer-text" style="display:none;">
+        <strong>Answer:</strong> {{ card["answer"] }}
+    </p>
+
+    <form action="/answer" method="POST">
+        <input type="hidden" name="card_id" value="{{ card['id'] }}">
+        <button type="submit" name="result" value="correct">I got it right</button>
+        <button type="submit" name="result" value="incorrect">I got it wrong</button>
+    </form>
+</body>
+</html>
