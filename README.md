@@ -35,6 +35,3 @@ One design choice was keeping the app single-user with no login system. Early in
 
 Another decision was using self-reported correctness (the user clicking "I got it right" or "I got it wrong") rather than trying to programmatically check answer text against user input. Flashcard answers are often free-form and subjective (e.g. accepting "USA" and "United States" as equally correct), so self-assessment was both simpler to implement and more honest to how people actually use flashcards to study.
 
-## AI Assistance
-
-Portions of this project's code and structure were developed with assistance from Claude (Anthropic), including debugging help, Flask routing patterns, and CSS styling. All logic was reviewed, tested, and understood before inclusion. This is also noted in a comment at the top of app.py. 
